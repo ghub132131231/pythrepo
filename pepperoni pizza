@@ -1,0 +1,57 @@
+# Fat pizza main program
+
+# import functions
+from turtle import *
+from random import *
+from pizza_demo_toppings_cheese_MODULE import cheese_bit
+from pizza_demo_toppings_cheese_MODULE import pepperoni
+
+# Create canvas
+setup(900, 700)
+title('Fat Pizza')
+tablecloth = 'sea green'
+bgcolor(tablecloth)
+
+#Prepare to draw
+penup()
+speed('fastest')
+
+# Define some useful constants
+diameter = 600
+radius = 600 // 2
+crust = 50
+
+# Draw the pizza's base
+pencolor('tan')
+dot(diameter)
+
+# Draw some tomato paste
+pencolor('orange red')
+dot(diameter - crust)
+
+## Sprinkle mozzarella cheese on the pizza
+tracer(False)
+for bits in range(300):
+    cheese_bit(randint(0, 359),
+               randint(0, radius - crust))
+
+
+# Add slices of pepperoni to the pizza
+pepperoni(radius, 179)
+
+# Slice up the pizza
+tracer(True)
+pencolor(tablecloth)
+width(8)
+home()
+pendown()
+
+for portion in range(6):
+    forward(radius)
+    goto(0, 0)
+    left(60)
+
+
+# Hide the turtle and release the window
+hideturtle()
+done()
