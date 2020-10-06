@@ -1,0 +1,15 @@
+# Find capitalised in the cricket balls text
+
+# Import function
+from re import findall
+
+#Open file and read contents
+text_file = open('cricket_balls.txt')
+contents = text_file.read()
+text_file.close()
+
+# Find and print all the cpaitalised words
+results = findall (r"\b[a-z]+\b", contents) 
+print('There were', len(results), 'matches:')
+for result in results:
+    print(result)
