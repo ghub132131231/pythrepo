@@ -1,0 +1,23 @@
+# Where's superman?
+
+# Open and read the web document
+text_file = open('Superman.html')
+contents = text_file.read()
+text_file.close()
+
+# Search for all occurances of a pattern 
+start_pattern = '<strong>'
+end_pattern = '</strong>'
+print('Strongly emphasised text in the document is as follows:')
+
+#Find first  occurance (if any)
+start_position = contents.find(start_pattern)
+
+# Keep finding all occurrences
+while start_position != -1:
+    # Find hte corresponding end tag
+    end_position = contents.find(end_pattern, start_position)
+    # Display the emphasised text
+    print(contents[start_position + len(start_pattern):end_position])
+    # Find the next one (if any)
+    start_position = contents.find(start_pattern, end_position)
