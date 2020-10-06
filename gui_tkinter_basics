@@ -1,0 +1,11 @@
+from tkinter import *
+
+# Create a window
+the_window = Tk()
+
+
+the_window.geometry("800x680")
+background_colour = '#FAE6C8'
+
+# Give the window a title
+the_window.title('Your Window title here')
