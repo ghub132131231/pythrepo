@@ -1,0 +1,16 @@
+# Calculate the volume of a cylinder
+
+# Import modules 
+from math import pi 
+
+#Function to calc a cylinder's volume
+def volume_of_cylinder(radius, height): # (radius, height) are in brackets as the functions NEEDS to know them
+    area_of_end = pi * (radius ** 2)
+    volume = round(area_of_end * height)
+    return volume
+
+
+
+print("First Cylinder's volume is", volume_of_cylinder(2, 3), "metres cubed")
+
+print("Second Cylinder's volume is", volume_of_cylinder(5.6, 4), "metres cubed")
